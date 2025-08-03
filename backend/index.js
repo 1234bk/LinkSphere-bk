@@ -11,11 +11,15 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use(cors({
-  origin: 'http://localhost:5173', // React app URL
-  credentials: true // if using cookies or sessions
-}));
+const allowedOrigins = [
+  "https://link-sphere-bk-git-main-brijeshs-projects-de7c4008.vercel.app",
+  "https://link-sphere-5t9453c4c-brijeshs-projects-de7c4008.vercel.app"
+];
 
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 // Routes
 app.use('/auth', authRoutes);
