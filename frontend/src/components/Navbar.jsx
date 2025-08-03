@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="absolute inset-0 border-[6px] border-t-blue-600 border-r-blue-600 border-b-transparent border-l-transparent rounded-full animate-spin"></div>
         </div>
         <p className="mt-4 text-xl font-bold text-blue-600 animate-pulse tracking-wide">
-          Loading company or logo...
+          Loading LinkSphere...
         </p>
       </div>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
     <nav className="w-full flex justify-between items-center px-4 py-3 bg-white shadow-md sticky top-0 z-50">
       {/* Left - Logo */}
       <div className="text-xl font-bold text-blue-600">
-        <Link to="/">LOGO||NAME</Link>
+        <Link to="/">LinkSphere</Link>
       </div>
 
       {/* Center - Search */}
