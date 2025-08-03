@@ -2,7 +2,8 @@ import React, { useState ,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import { useAuth } from '../context/AuthContext'; // or wherever your context is
-import axios from 'axios';
+import axios from 'axios';    
+import api from '../api/axios';
 
 const AuthForm = () => {
   const { login, token } = useAuth(); 
@@ -54,7 +55,7 @@ const endpoint = isLogin ? `${BASE_URL}/auth/login` : `${BASE_URL}/auth/register
         };
 
     try {
-    const res = await axios.post(endpoint, body);
+    const res = await api.post(endpoint, body);
 
     const data = res.data;
     setMessage(isLogin ? `Welcome, ${data.user.name}` : 'Registered successfully!');

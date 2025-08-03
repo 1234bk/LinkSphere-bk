@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from 'axios';
-
+import api from '../api/axios';
 const EditProfile = () => {
   const { user, token, login } = useAuth();
   const navigate = useNavigate();
@@ -37,7 +37,8 @@ const EditProfile = () => {
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     
     try {
-    const res = await axios.put(`${BASE_URL}/auth/updateprofile`, updatedUser, {
+      // const res = await api.post(endpoint, body);
+    const res = await api.put(`${BASE_URL}/auth/updateprofile`, updatedUser, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
